@@ -3,5 +3,6 @@ This game is made in nasm using x86 arhitecture. most probably you need to insta
 for  Astro Cascade.com you need to have DOSBox 0.74-3 i have attached its installer 
 also you have to navigate to folder where you have placed the Astro Cascade.com file by using following commands in it 
 1)mount c (path to folder)
-2)Astro Cascade
+2)c:
+3)Astro Cascade
 then just type its name it will run file 
