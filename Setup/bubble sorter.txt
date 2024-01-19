@@ -1,0 +1,65 @@
+
+[org 0x100]
+jmp start
+
+;labels
+num: dw 2,7,3,5,0xffff
+
+
+
+swap:
+mov dx,[num+bx+2]
+mov [num+bx],dx
+mov [num+bx+2],ax
+jmp back
+
+
+start:
+mov bx,num+2
+mov cx,0
+
+
+L1:
+inc cx
+add bx,2
+cmp word[bx],0xffff
+jne L1
+
+
+add cx,cx
+
+
+loop1:
+
+	mov ax,[num]
+	mov bx,0
+
+	loop2:
+
+		cmp ax,[num+bx+2]
+		jg swap 
+		back:
+
+		mov ax,[num+bx+2]
+		add bx,2
+
+	cmp bx,cx
+	jne loop2
+
+sub cx,2
+jnz loop1
+
+
+
+
+;for displaying data in ax 
+mov bx,num;
+L2:
+mov ax,[bx]
+add bx,2
+cmp word[bx],0xffff
+jne L2
+
+
+mov ax,0x4c00
+int 21h

@@ -1,0 +1,13 @@
+[org 0x100]
+mov ax,2
+mov [num],ax
+add [num],ax
+add [num],ax
+add [num],ax
+add [num],ax
+add [num],ax
+mov ax,0x4c00
+int 21h
+
+
+num: dw 0
